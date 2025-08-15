@@ -1,0 +1,79 @@
+
+:root {
+  color-scheme: dark light;
+  --bg: #0b0f19;
+  --panel: #111827;
+  --panel-border: #1f2937;
+  --text: #e6e6e6;
+  --muted: #9ca3af;
+  --brand: #7dd3fc;
+  --brand-2: #a78bfa;
+  --ring: #334155;
+  --shadow: rgba(0,0,0,.4);
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  line-height: 1.6;
+}
+.container {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+header, footer {
+  background: color-mix(in oklab, var(--panel) 96%, black);
+  border-bottom: 1px solid var(--panel-border);
+  border-top: 1px solid var(--panel-border);
+  padding: 12px 16px;
+}
+main {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.card {
+  width: min(720px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 32px var(--shadow);
+}
+h1 {
+  margin: 0 0 8px 0;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  letter-spacing: .2px;
+}
+p { margin: 0 0 14px 0; color: var(--muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+button {
+  appearance: none;
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 4px 14px var(--shadow);
+}
+button:hover { transform: translateY(-1px); }
+button.primary {
+  border: 1px solid color-mix(in oklab, var(--brand) 60%, white);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 25%, black), color-mix(in oklab, var(--brand-2) 20%, black));
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--panel-border); padding: 6px 10px; border-radius: 999px;
+  background: #0c1322;
+  color: var(--muted);
+  font-size: .9rem;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-2); }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
