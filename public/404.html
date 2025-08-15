@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0; url=./" />
+  <title>Weiterleitung…</title>
+  <script>
+    // Fallback in JS: leite auf den Basis-Pfad (Repo) um
+    (function(){
+      try {
+        var parts = location.pathname.split('/').filter(Boolean);
+        var base = '/' + (parts[0] || '') + '/';
+        // Für User/Org-Pages (<user>.github.io) ist parts[0] die leere Zeichenkette → base='/'
+        location.replace(base);
+      } catch (e) {
+        location.replace('./');
+      }
+    })();
+  </script>
+  <style>body{font:14px system-ui;margin:2rem;color:#e6e6e6;background:#0b0f19}</style>
+</head>
+<body>
+  Weiterleitung…
+</body>
+</html>
